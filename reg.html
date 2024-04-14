@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            margin-left: 240px;
+            display: none;
+        }
+        form{
+          text-align: center;
+        }
+        label{
+          font-size: 20px;
+        }
+        input{
+          padding: 5px;
+          padding-left: 10px;
+        }
+        .z{
+          margin-left: 156px;
+        }
+        .y{
+          margin-left: 160px;
+        }
+
+        .x{
+          margin-left: 87px;
+        }
+        .w{
+          margin-left: 188px;
+        }
+    </style>
+</head>
+<body>
+  <form>
+    <h2 style="text-align:center;color:green";>Register Here</h2>
+    <label>Username</label>
+        <input  class="z" type="username" placeholder="Enter username"><br>
+         <span>username can't blank</span><br>
+
+        <label>Password</label>
+      <input class="y"type="password" placeholder="Enter password"><br>
+        <span>password can't blank</span> <br>
+        
+        <label>Confirm Password</label>
+        <input class="x" type="Password" placeholder="Enter confirm Password"><br>
+        <span>confirmpassword can't blank</span><br>
+  
+       <label for>Email</label>
+       <input class="w"type="email"placeholder="Enter email"><br>
+        <span>email can't blank</span><br>
+
+        <input type="submit" value="Register">
+        </form>
+    <script>
+
+        console.log(document.forms)
+     var a=document.forms;
+    console.log(a[0])
+
+     var arr=[];
+
+     a[0].addEventListener("submit",function(e){
+        e.preventDefault();
+       var obj={
+        username:e.target[0].value,
+        password:e.target[1].value,
+        confirmpassword:e.target[2].value,
+        email:e.target[3].value
+       }
+       arr.push(obj)
+       console.log(arr);
+
+       if(obj.username.length!==0 && obj.password.length!==0 &&  obj.confirmpassword.length!==0 && obj.email.length!==0){
+       window.location.assign("./login.html")
+
+       }
+       
+       else  if(obj.username.length==0){
+            var s=document.getElementsByTagName("span")
+            s[0].style.display="inline"
+            s[0].style.color="red"
+        }
+        else if(obj.password.length==0){
+            var s=document.getElementsByTagName("span")
+            s[1].style.display="inline"
+            s[1].style.color="red"
+        }
+
+        else  if(obj.confirmpassword.length==0){
+            var s=document.getElementsByTagName("span")
+            s[2].style.display="inline"
+            s[2].style.color="red"
+        }
+        else if(obj.email.length==0){
+            var s=document.getElementsByTagName("span")
+            s[3].style.display="inline"
+            s[3].style.color="red"
+        }
+        e.target[0].value="";
+        e.target[1].value="";
+        e.target[2].value="";
+        e.target[3].value="";
+
+     })
+
+    </script>
+</body>
+</html>

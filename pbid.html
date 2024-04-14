@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+</body>
+    <script>
+        var a=document.createElement("h1")
+        document.body.appendChild(a)
+        a.innerText="Product Bid";
+        a.setAttribute("style","color:green;text-align:center;font-style:italic")
+          
+        var b=document.createElement("div")
+        document.body.appendChild(b)
+    
+        var ab=window.localStorage.getItem("total")
+        var d=JSON.parse(ab)
+        console.log(d)
+
+        imgg=document.createElement("img")
+        imgg.setAttribute("style","width:265px;margin-left:610px")
+        imgg.setAttribute("src",d["image"])
+        b.appendChild(imgg)
+    
+         var div1=document.createElement("div")
+         document.body.appendChild(div1)
+         div1.style.display="inline";
+    
+      var a=document.createElement("p")
+      div1.appendChild(a)
+      a.innerText="Product Id"
+      a.setAttribute("style","margin-left:600px;font-size:20px;")
+
+      var a=document.createElement("p")
+      div1.appendChild(a)
+      a.innerText="Category"
+      a.setAttribute("style","margin-left:600px;font-size:20px;")
+    
+      var a=document.createElement("p")
+      div1.appendChild(a)
+      a.innerText="Product Name"
+      a.setAttribute("style","margin-left:600px;font-size:20px;")
+    
+      var a=document.createElement("p")
+      div1.appendChild(a)
+      a.innerText="Minimum Bid"
+      a.setAttribute("style","margin-left:600px;font-size:20px;")
+     
+
+      var a=document.createElement("p")
+      div1.appendChild(a)
+      a.innerText="Bid End Time"
+      a.setAttribute("style","margin-left:600px;font-size:20px;")
+     
+
+      var div2=document.createElement("div2")
+      document.body.appendChild(div2)
+      div2.setAttribute("style","display:block;margin-left:415px;margin-top:-213px")
+     
+
+      var y=document.createElement("p")
+      div2.appendChild(y)
+      y.innerText=d["productid"]
+      y.setAttribute("style","margin-left:450px;font-size:20px;")
+     
+
+      var y=document.createElement("p")
+      div2.appendChild(y)
+      y.innerText=d["categoty"]
+      y.setAttribute("style","margin-left:450px;font-size:20px;")
+     
+     
+      
+      var y=document.createElement("p")
+      div2.appendChild(y)
+      y.innerText=d["productname"]
+      y.setAttribute("style","margin-left:450px;font-size:20px;")
+     
+      
+      var y=document.createElement("p")
+      div2.appendChild(y)
+      y.innerText=d["minimumbid"]
+      y.setAttribute("style","margin-left:450px;font-size:20px;")
+      
+      
+     var y=document.createElement("p")
+     div2.appendChild(y)
+     y.innerText=d["bidendtime"]
+     y.setAttribute("style","margin-left:450px;font-size:20px;")
+
+      var btn=document.createElement("button")
+      document.body.appendChild(btn)
+      btn.innerText="Bid";
+      btn.setAttribute("style","width:60px;")
+      btn.style.marginLeft="740px";
+
+        btn.addEventListener("click",function(){
+            window.location.assign("./bid.html")
+        })
+
+        var w=document.createElement("p")
+        document.body.appendChild(w)
+        w.innerText="Note: Your bid amount must be more than minimum bid";
+        w.setAttribute("style","margin-left:550px;font-size:20px;")
+        
+       var anc=document.createElement("a")
+      anc.setAttribute("href","./details.html")
+      document.body.appendChild(anc)
+      anc.innerText="Back To Home";
+      anc.setAttribute("style","font-size:23px;text-decoration:none;color:orange;margin-left:720px")
+    </script>
+</html>

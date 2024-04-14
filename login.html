@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+        span{
+            display: none;
+        }
+        form{
+            text-align: center;
+        }
+        label{
+            font-size: 20px; 
+        }
+        input{
+            padding: 10px;
+            padding-left: 190px ;
+            padding-right: 100px ; 
+        }
+       .mani{
+      padding: 10px;
+      width: 150px;
+       }
+    </style>
+</head>
+<body>
+    <div>
+    <h2 style="text-align:center;color:green;">Login Here</h2>
+    <form> 
+        <label>Username:</label><br><br>
+        <input type="text" placeholder="username"><br>
+        <span class="w">username can't blank</span><br>
+        <label>Password:</label><br><br>
+        <input type="password" placeholder="password"><br>
+        <span class="x">password can't blank</span><br>
+        <input  class="mani" type="submit" value="Login">
+    </form>
+</div>
+</body>
+    <script>
+       console.log(document.forms)
+       var d=document.forms
+      console.log(d[0])
+    
+         var arr=[];
+    d[0].addEventListener("submit",function(e){
+       e.preventDefault();
+          var obj={
+            username:e.target[0].value,
+            password:e.target[1].value
+          }
+          arr.push(obj)
+          console.log(arr)
+
+          if(obj.username.length!==0 && obj.password.length!==0){
+                window.location.assign("./details.html")
+          }
+       else  if(obj.username.length==0){
+            var s=document.getElementsByTagName("span")
+            s[0].style.display="inline"
+            s[0].style.color="red"
+        }
+        else if(obj.password.length==0){
+            var s=document.getElementsByTagName("span")
+            s[1].style.display="inline"
+            s[1].style.color="red"
+        }
+        e.target[0].value="";
+       e.target[1].value="";
+       })
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

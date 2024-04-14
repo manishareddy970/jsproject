@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+     table{
+      margin-left: 100px;
+     }
+     img:hover{
+      transform: scale(1.2);
+     }
+    </style>
+</head>
+<body>
+</body>
+    <script>
+      var a=document.createElement("h1")
+      document.body.appendChild(a)
+      a.innerText="Auction Items" 
+      a.setAttribute("style","text-align:center;margin-left:60px;font-size:20px;margin-top:20px;color:green")
+      
+      var a=document.createElement("h3")
+      document.body.appendChild(a)
+      a.innerText="Product Id"
+      a.setAttribute("style","margin-left:60px;font-size:20px;display:inline-block")
+      
+      var a=document.createElement("h3")
+      document.body.appendChild(a)
+      a.innerText="Image"
+      a.setAttribute("style","margin-left:120px;font-size:20px;display:inline-block")
+    
+      var a=document.createElement("h3")
+      document.body.appendChild(a)
+      a.innerText="Category"
+      a.setAttribute("style","margin-left:180px;font-size:20px;display:inline-block")
+     
+      var a=document.createElement("h3")
+      document.body.appendChild(a)
+      a.innerText="Product Name"
+      a.setAttribute("style","margin-left:200px;font-size:20px;display:inline-block")
+     
+      var a=document.createElement("h3")
+      document.body.appendChild(a)
+      a.innerText="Minimum Bid(in Rs)"
+      a.setAttribute("style","margin-left:170px;font-size:20px;display:inline-block")
+     
+      var a=document.createElement("h3")
+      document.body.appendChild(a)
+      a.innerText="status"
+      a.setAttribute("style","margin-left:140px;font-size:20px;display:inline-block")
+     
+    var obj=[
+      {
+        productid:1,
+        image:"./sofa.jpg",
+        category:"Furnitures",
+        productname:"Bed",
+        minimumbid:20000,
+        status:"available"
+       
+      },
+      {
+        productid:2,
+        image:"./wring.jpg",
+        category:"Jewellery",
+        productname:"Ring",
+        minimumbid:2000,
+        status:"available"
+        
+      },
+      {
+        productid:3,
+        image:"./jacket.jpg",
+        category:"Men's Clothing",
+        productname:"Lether Jacket",
+        minimumbid:9000,
+        status:"available"
+      },
+      {
+        productid:4,
+        image:"./mobile.jpg",
+        category:"Electronics",
+        productname:"Redmi 12 Mobile",
+        minimumbid:10000,
+        status:"available"
+      
+      },
+      {
+        productid:5,
+        image:"./wjackett.jpg",
+        category:"women's Clothing",
+        productname:"Lether Jacket",
+        minimumbid:1500,
+        status:"available"
+      
+      }
+
+    ]
+    for(let i=0;i<obj.length;i++){
+    var b=document.createElement("table")
+    document.body.appendChild(b)
+    var tr=document.createElement("tr")
+    b.appendChild(tr)
+
+    var td1=document.createElement("td")
+    tr.appendChild(td1)
+    td1.innerText=obj[i]["productid"];
+    td1.style.width="120px"
+   
+    var imgg=document.createElement("img")
+    imgg.setAttribute("src",obj[i]["image"])
+    var td2=document.createElement("td")
+    td2.appendChild(imgg)
+    imgg.style.width="150px"
+    td2.style.width="280px";
+    tr.appendChild(td2)
+  
+    var td3=document.createElement("td")
+    tr.appendChild(td3)
+    td3.innerText=obj[i]["category"];
+    td3.style.fontSize="19px"
+    td3.style.width="320px"
+
+    var td4=document.createElement("td")
+    tr.appendChild(td4)
+    td4.innerText=obj[i]["productname"];
+    td4.style.fontSize="19px"
+    td4.style.width="300px"
+   
+    var td5=document.createElement("td")
+    tr.appendChild(td5)
+    td5.innerText=obj[i]["minimumbid"];
+    td5.style.fontSize="19px"
+    td5.style.width="250px"
+   
+    var td6=document.createElement("td")
+    tr.appendChild(td6)
+    td6.innerText=obj[i]["status"];
+    td6.style.marginTop="150px";
+    td6.style.fontSize="19px";
+    
+    imgg.addEventListener("click",function(){
+      window.localStorage.setItem("total",JSON.stringify(obj[i]))
+      window.location.assign("./pbid.html")
+    })
+    }
+    </script>
+
+</html>
